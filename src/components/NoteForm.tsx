@@ -1,9 +1,8 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { TagsConext } from "../contexts/TagsContext";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import { Note } from "../routes/HomePage";
-export type Inputs = {
+export interface Inputs {
     noteTitle: string;
     noteTag: string;
     noteBody: string;
@@ -18,14 +17,16 @@ interface Props {
 ////////////////////////////the component///////////////////////
 export default function NoteForm(props: Props) {
     const Navigate = useNavigate();
-    const tagsConext = useContext(TagsConext);
-    console.log(tagsConext?.tags)
+
+
+
     const {
         register,
         setValue,
         handleSubmit,//this will pass form data to the function that is passed to her
         formState: { errors },
     } = useForm<Inputs>();
+
     useEffect(() => {
         if (props.noteData && props.isEditing) {
             setValue("noteTitle", props.noteData!.title)
@@ -38,6 +39,8 @@ export default function NoteForm(props: Props) {
         }
 
     }, [])
+
+
     return <div className="w-screen h-screen lg:pl-[200px] lg:pr-[200px] pt-3 pr-10 pl-10">
         <div className="w-full flex justify-end pt-4">
             <button

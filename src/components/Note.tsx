@@ -10,7 +10,7 @@ interface Props extends NoteType {
 export default function Note(props: Props) {
     const Navigate = useNavigate()
     const handleClick = () => {
-        Navigate(`/edit/${props.id}`)
+        Navigate(`edit/${props.id}`)
     }
     return <>
         <div className=" pl-4 pt-2 w-full lg:w-[250px] flex flex-col bg-white border-black border-[3px] shadow-sm hover:shadow-2xl hover:cursor-pointer border-solid  h-[120px] xl:h-[170px] rounded-xl pr-2 " >

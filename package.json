@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.0",
     "react-router-dom": "^6.8.0",
+    "react-select": "^5.7.0",
     "use-local-storage": "^2.3.6",
     "uuid": "^9.0.0"
   },

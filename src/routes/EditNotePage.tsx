@@ -1,9 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import NoteForm, { Inputs } from "../components/NoteForm"
-import { useContext } from "react"
 import { Note } from "./HomePage"
 import useLocalStorage from "use-local-storage"
-import { TagsConext } from "../contexts/TagsContext"
 
 type NoteSearchType = (notes: Note[], targetId: string | undefined, start?: number, end?: number) => number
 const noteSearch: NoteSearchType = (notes, targetId, start = 0, end = notes.length - 1) => {
@@ -28,6 +26,7 @@ export default function EditNotePage() {
     //creat edit note function which saves the edited note 
     const [notes, setNotes] = useLocalStorage<Note[]>("notes", [])
     const { id } = useParams()
+    console.log(id)
     const Navigate = useNavigate()
 
     function updateNote(newNoteData: Inputs) {
