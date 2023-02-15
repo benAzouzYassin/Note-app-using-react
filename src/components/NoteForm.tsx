@@ -54,6 +54,7 @@ export default function NoteForm(props: Props) {
             <div className="flex flex-col lg:flex-row w-full mb-10 gap-7 justify-center h-12">
                 <div className="flex flex-col lg:w-1/2">
                     <input
+                        autoComplete="off"
                         type="text"
                         {...register("noteTitle", { required: true, maxLength: 24 })}
                         placeholder="Note title"
@@ -74,6 +75,7 @@ export default function NoteForm(props: Props) {
                 <div className="flex flex-col lg:w-1/2">
                     {" "}
                     <input
+                        autoComplete="off"
                         type="text"
                         {...register("noteTag", { required: true, maxLength: 24 })}
                         placeholder="Note Tag"
@@ -93,6 +95,7 @@ export default function NoteForm(props: Props) {
                 </div>
             </div>
             <input
+                autoComplete="off"
                 type="text "
                 {...register("noteBody", { required: true })}
                 placeholder="Note Body"

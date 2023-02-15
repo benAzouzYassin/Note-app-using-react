@@ -43,7 +43,6 @@ export default function HomePage() {
     }
 
     function handleTagChange(data: MultiValue<Tag>) {
-        data.forEach(d => console.log)
         if (data.length > 0) {
             const selectedTags: string[] = data.map(tag => tag.label)
             const flitredNotes = notes.filter(note => {
@@ -83,7 +82,6 @@ export default function HomePage() {
 
             <div className="flex flex-col lg:flex-row w-full mb-10 gap-7 justify-center mt-7 h-12">
 
-                <input autoComplete="off" type="text" placeholder="Search title" className="border-[1px] h-10 lg:w-1/2 rounded-[4px] placeholder:text-gray-400 border-slate-300 p-2 mt-8 lg:mt-0 transition-colors hover:border-gray-400 focus:shadow-sm focus:border-[2px] focus:outline-blue-500 outline-2" />
                 <CreatableTags handleChange={handleTagChange} tags={filtredTagsObj} />
 
             </div>

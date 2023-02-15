@@ -26,7 +26,6 @@ export default function EditNotePage() {
     //creat edit note function which saves the edited note 
     const [notes, setNotes] = useLocalStorage<Note[]>("notes", [])
     const { id } = useParams()
-    console.log(id)
     const Navigate = useNavigate()
 
     function updateNote(newNoteData: Inputs) {
